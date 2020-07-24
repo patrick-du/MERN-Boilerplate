@@ -1,0 +1,23 @@
+{
+  "name": "mern-stack-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrick-du/MERN-Stack-Boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrick-du/MERN-Stack-Boilerplate/issues"
+  },
+  "homepage": "https://github.com/patrick-du/MERN-Stack-Boilerplate#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
