@@ -5,8 +5,7 @@ const express = require('express');
 const app = express();
 
 // Environment Varibles
-let host = process.env.HOST;
-let port = process.env.PORT;
+let port = process.env.PORT || 8081;
 
 // Simple '/' Route
 app.get('/', (req, res) => {
@@ -15,5 +14,5 @@ app.get('/', (req, res) => {
 
 // Server
 app.listen(port, () => {
-  console.log(`Server is listening on ${host}:${port}`);
+  console.log(`Server is listening on localhost:${port}`);
 });
