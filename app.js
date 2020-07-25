@@ -10,8 +10,8 @@ let port = process.env.PORT;
 
 // Simple '/' Route
 app.get('/', (req, res) => {
-    res.send('Hello World');
-})
+  res.send('Hello World');
+});
 
 // Server
 app.listen(port, () => {
