@@ -19,14 +19,22 @@
   },
   "homepage": "https://github.com/patrick-du/MERN-Stack-Boilerplate#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
-    "eslint": "7.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.25",
     "nodemon": "^2.0.4",
-    "prettier": "^2.0.5"
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
+    "eslint": "7.2.0",
+    "prettier": "^2.0.5",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "2.21.2",
     "eslint-plugin-jsx-a11y": "6.3.0",

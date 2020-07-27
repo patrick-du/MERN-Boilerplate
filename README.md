@@ -59,6 +59,16 @@ Visit http://localhost:3000 in your browser to see the app running!
 - **dotenv:** a zero-dependency module that loads environment variables from a .env file into process.env
 - **express:** a fast, unopinionated, minimalist web framework for node
 - **nodemon:** a simple CLI utility that makes it easy to run Node scripts, watch for file changes, and restart the process automatically
+- **body-parser:** 
+- **cookie-parser:** 
+- **mongoose:**
+- **jsonwebtoken:** 
+- **passport:** 
+- **passport-jwt:** 
+- **passport-google-oauth20:** 
+- **passport-facebook:** 
+- **nodemon:** 
+
 
 ---
 
