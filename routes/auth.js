@@ -1,30 +1,19 @@
-const router = require('express').Router();
-const User = require('../models/User');
+const express = require('express');
+const passport = require('passport');
+const router = express.Router();
 
-const Joi = require('@hapi/joi');
+// @desc    Google Auth
+// @route   GET /auth/google
+router.get('/google', passport.authenticate('google', { scope: ['profile'] }));
 
-const schema = {
-  name: Joi.string().min(6).required(),
-  email: Joi.string().min(6).required().email(),
-  password: Joi.string().min(6).required(),
-};
-
-router.post('/register', async (req, res) => {
-
-  Joi.validate(req, body, schema);
-  
-  const user = new User({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-  });
-
-  try {
-    const savedUser = await user.save();
-    res.send(savedUser);
-  } catch (err) {
-    res.status(400).send(err);
-  }
-});
+// @desc    Google Auth Callback
+// @route   GET /auth/google/callback
+router.get(
+  '/google/callback',
+  passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) => {
+    res.redirect('/dashboard');
+  },
+);
 
 module.exports = router;
