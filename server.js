@@ -1,6 +1,7 @@
 // Imports
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const passport = require('passport');
@@ -20,6 +21,9 @@ connectDB();
 
 // Start Server
 const app = express();
+
+// CORS Middleware
+app.use(cors());
 
 // Logging Middleware
 app.use(morgan('dev')); // Logging
