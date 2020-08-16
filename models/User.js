@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const UserSchema = new mongoose.Schema({
   provider: {
     type: String,
+    required: true,
   },
   providerId: {
     type: String,
@@ -10,15 +11,12 @@ const UserSchema = new mongoose.Schema({
   },
   displayName: {
     type: String,
-    required: true,
   },
   firstName: {
     type: String,
-    required: true,
   },
   lastName: {
     type: String,
-    required: true,
   },
   image: {
     type: String,
