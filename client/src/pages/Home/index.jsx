@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <StyledHome>
       <p className="pageTitle">OAuth 2.0 Boilerplate</p>
-      <Terminal/>
+      <Terminal />
       <CardList />
     </StyledHome>
   );

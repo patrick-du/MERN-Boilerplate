@@ -3,12 +3,14 @@ import api from '../api';
 const Context = createContext(null);
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({});
-  useEffect(() => {
-    api
-      .get('/profile', { withCredentials: true })
-      .then((res) => res.json())
-      .then((res) => setUser(res))
+  const [user, setUser] = useState(null);
+  useEffect(async () => {
+    await api
+      .get('/user', { withCredentials: true })
+      .then((res) => {
+        const userData = res && res.data;
+        setUser(userData);
+      })
       .catch((err) => {
         console.log(err);
       });
@@ -18,4 +20,5 @@ const UserProvider = ({ children }) => {
 };
 
 UserProvider.Context = Context;
+
 export default UserProvider;

@@ -5,7 +5,7 @@ const StyledCard = styled.div`
   width: 80%;
   background: ${(props) => props.color};
   margin: auto auto 20px auto;
-  border-radius: 6px;
+  border-radius: 15px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -19,6 +19,7 @@ const StyledCard = styled.div`
   .logo {
     width: 70px;
     height: 70px;
+    border-radius: 15px;
   }
 
   .card-name {
@@ -29,9 +30,9 @@ const StyledCard = styled.div`
   }
 `;
 
-const Card = ({ img, txt, href, color }) => {
+const Card = ({ img, txt, href, color, fcn }) => {
   return (
-    <StyledCard onClick={() => (window.location = href)} color={color}>
+    <StyledCard onClick={() => (fcn ? fcn() : window.location = href)} color={color}>
       <div
         className="logo"
         style={{

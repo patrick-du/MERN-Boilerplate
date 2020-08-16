@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-// @desc    Profile
-// @route   GET /profile
-router.get('/profile', (req, res) => {
+// @desc    User
+// @route   GET /user
+router.get('/user', (req, res) => {
   req.isAuthenticated()
     ? res.send(req.user)
     : res
