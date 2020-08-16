@@ -6,7 +6,7 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
   useEffect(() => {
     api
-      .get('/user')
+      .get('/profile', { withCredentials: true })
       .then((res) => res.json())
       .then((res) => setUser(res))
       .catch((err) => {

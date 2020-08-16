@@ -1,16 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-// @desc    Login/Landing page
-// @route   GET /
-router.get('/', (req, res) => {
-  res.send('Login');
-});
-
-// @desc    Dashboard
-// @route   GET /dashboard
-router.get('/dashboard', (req, res) => {
-  res.send('Dashboard');
+// @desc    Profile
+// @route   GET /profile
+router.get('/profile', (req, res) => {
+  req.isAuthenticated()
+    ? res.send(req.user)
+    : res
+        .status(403)
+        .send({ message: 'You must be logged in to perform this action.' });
 });
 
 module.exports = router;

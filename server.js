@@ -23,7 +23,7 @@ connectDB();
 const app = express();
 
 // CORS Middleware
-app.use(cors());
+app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 
 // Logging Middleware
 app.use(morgan('dev')); // Logging
