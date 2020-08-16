@@ -2,37 +2,42 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledCard = styled.div`
-  background: white;
-  border-radius: 2px;
-  border: ${(props) => props.color};
-  display: inline-block;
-  margin-right: 2em;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  transition: all ease-in-out 0.6s;
+  width: 80%;
+  background: ${(props) => props.color};
+  margin: auto auto 20px auto;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
 
   .card-name {
     margin: 0;
     text-align: left;
-    padding: 5px 0px 5px 10px;
-  }
-
-  &:hover {
-    transform: translateY(-10px);
+    flex-basis: auto;
+    flex: 1;
   }
 `;
 
-const Card = ({ img, name, href, color }) => {
-  const NAME = name.charAt(0).toUpperCase() + name.substring(1, name.length);
+const Card = ({ img, txt, href, color }) => {
   return (
-    <StyledCard style={{ border: `` }} onClick={() => (window.location = href)}>
-      <p className="card-name">{NAME}</p>
+    <StyledCard onClick={() => (window.location = href)} color={color}>
       <div
+        className="logo"
         style={{
-          minHeight: 100,
-          minWidth: 100,
-          background: `url("${img}") no-repeat center center / 50% ${color}`,
-        }}
+          background: `url("${img}") no-repeat center center / 50% ${color}`}}
       />
+      <p className="card-name">{txt}</p>
     </StyledCard>
   );
 };

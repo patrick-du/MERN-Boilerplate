@@ -3,14 +3,16 @@ import styled from 'styled-components';
 
 const StyledTerminal = styled.div`
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   background: white;
   border-radius: 6px;
+  text-align: left;
 
   .title-bar {
     background-color: white;
-    border-top-right-radius: 6px;
-    border-top-left-radius: 6px;
+    height: 22px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     color: #4d494d;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -51,15 +53,18 @@ const StyledTerminal = styled.div`
 
   .content {
     background-color: #eeeeee;
-    padding: 20px 10px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    padding: 20px 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  a {
+    color: #00ca56;
+    text-decoration: dotted;
   }
 `;
 
-const Terminal = ({ userData, selected }) => {
-  const selectedData = selected === 'All' ? userData : userData[selected];
-  const jsonCode = JSON.stringify(selectedData, null, 4);
+const Terminal = () => {
   return (
     <StyledTerminal>
       <div className="title-bar">
@@ -68,10 +73,30 @@ const Terminal = ({ userData, selected }) => {
           <div className="mac-btn minimize" />
           <div className="mac-btn zoom" />
         </div>
-        <p style={{ textAlign: 'center', margin: 0 }}>json-terminal</p>
       </div>
       <div className="content">
-        <pre>{jsonCode}</pre>
+        <pre>
+          Client-server boilerplate for Google & Facebook OAuth 2.0 via
+          Passport.js
+        </pre>
+        <pre>Developed using React, Node, Express, MongoDB </pre>
+        <br />
+
+        <pre>
+          Repository:{' '}
+          <a
+            href="https://github.com/patrick-du/MERN-Stack-Boilerplate"
+            target="_blank"
+          >
+            MERN-Stack-Boilerplate
+          </a>
+        </pre>
+        <pre>
+          Developer:{' '}
+          <a href="https://patrickdu.com" target="_blank">
+            Patrick Du
+          </a>
+        </pre>
       </div>
     </StyledTerminal>
   );
