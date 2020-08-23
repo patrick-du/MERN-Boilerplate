@@ -45,7 +45,6 @@ module.exports = function (passport) {
         callbackURL: '/auth/facebook/callback',
       },
       async (accessToken, refreshToken, profile, done) => {
-        console.log(profile);
         const newUser = {
           provider: profile.provider,
           providerId: profile.id,

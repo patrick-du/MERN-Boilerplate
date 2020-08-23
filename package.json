@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "concurrently \"nodemon server\" \"npm run client\"",
+    "start": "yarn install && concurrently \"nodemon server\" \"npm run client\"",
     "server": "node server.js",
     "client": "node start-client.js"
   },
