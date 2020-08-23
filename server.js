@@ -49,5 +49,5 @@ app.use('/auth', require('./routes/auth'));
 // Server
 app.listen(
   PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`),
+  console.log(`Server running on port ${PORT}`),
 );

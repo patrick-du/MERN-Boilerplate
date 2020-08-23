@@ -4,16 +4,19 @@ const Context = createContext(null);
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  useEffect(async () => {
-    await api
-      .get('/user', { withCredentials: true })
-      .then((res) => {
-        const userData = res && res.data;
-        setUser(userData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  useEffect(() => {
+    const fetchUser = async () => {
+      await api
+        .get('/user', { withCredentials: true })
+        .then((res) => {
+          const userData = res && res.data;
+          setUser(userData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    fetchUser();
   }, []);
 
   return <Context.Provider value={user}>{children}</Context.Provider>;

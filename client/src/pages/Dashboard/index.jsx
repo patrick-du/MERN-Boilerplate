@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import UserProvider from '../../contexts/UserProvider';
 import styled from 'styled-components';
 import AuthenticatedUser from '../../components/AuthenticatedUser';
