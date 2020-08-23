@@ -4,10 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "cd client && yarn build",
-    "start": "yarn install && concurrently \"nodemon server\" \"npm run client\"",
-    "server": "node server.js",
-    "client": "node start-client.js"
+    "client-install": "cd client && yarn install",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd client && yarn start",
+    "dev": "concurrently \"nodemon server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && yarn install && yarn run build"
   },
   "repository": {
     "type": "git",
