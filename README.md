@@ -1,6 +1,6 @@
 # MERN Boilerplate
 
-- Fullstack boilerplate created with MongoDB, Express, React, and Node.js
+- Fullstack OAuth2.0 authentication boilerplate created with MongoDB, Express, React, and Node.js
 
 ---
 
@@ -8,8 +8,7 @@
 
 - [Installation and Usage](##installation-and-usage)
 - [Features](#features)
-- [Core Dependencies](#core-dependencies)
-- [License](#license)
+- [Dependencies](#core-dependencies)
 
 ---
 
@@ -40,37 +39,31 @@ Visit http://localhost:3000 in your browser to see the app running!
 - Server side has Nodemon for auto-loading
 - Concurrently added to simultatenously run client and server
 
-### Authentication
-- ?
+### Token-based Authentication Using OAuth 2.0
+- Passport middleware setup to support Google and Facebook strategies
 
 ---
 
 ## Core Dependencies
 - **prettier:** an opinionated code formatter
 - **eslint:** a configurable JavaScript linter for identifying and reporting on patterns 
-- **eslint-config-prettier:** turns off all rules that are unnecessary or might conflict with Prettier
-- **eslint-plugin-prettier:** runs Prettier as an ESLint rule and reports differences as individual ESLint issues
-- **concurrently:**
+- **concurrently:** run commands concurrently
 
 ### Client Specific Dependencies
 - **react-scripts:** a package that includes scripts and configuration used by Create React App
+- **react-router-dom:** a routing library React with DOM bindings
+- **styled-components:** visual primitives for the component age
+- **axios:** promise based HTTP client for the browser and Node.js
 
 ### Server Specific Dependencies
 - **dotenv:** a zero-dependency module that loads environment variables from a .env file into process.env
-- **express:** a fast, unopinionated, minimalist web framework for node
 - **nodemon:** a simple CLI utility that makes it easy to run Node scripts, watch for file changes, and restart the process automatically
-- **body-parser:** 
-- **cookie-parser:** 
-- **mongoose:**
-- **jsonwebtoken:** 
-- **passport:** 
-- **passport-jwt:** 
-- **passport-google-oauth20:** 
-- **passport-facebook:** 
-- **nodemon:** 
-
-
----
-
-## Licenses
-- 
+- **cors:** Node.js CORS middleware
+- **express:** a fast, unopinionated, minimalist web framework for Node.js
+- **express-session:** simple session middleware for Express
+- **mongoose:** MongoDB object modeling tool
+- **connect-mongo:** MongoDB session store for Express and Connect
+- **passport:** simple, unobtrusive authentication for Node.js
+- **passport-google-oauth20:** Google (OAuth 2.0) authentication strategies for Passport
+- **passport-facebook:** Facebook authentication strategy for Passport
+- **http-proxy-middleware:** Node.js proxy middleware for connect, express and browser-sync
