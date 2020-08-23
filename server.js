@@ -8,6 +8,7 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const connectDB = require('./config/db');
+const path = require('path');
 
 // Config
 dotenv.config({ path: './config/config.env' });
@@ -22,8 +23,19 @@ connectDB();
 // Start Server
 const app = express();
 
+// Static File Declaration
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Production Mode
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get('*', (req, res) => {
+    res.sendfile(path.join((__dirname = 'client/build/index.html')));
+  });
+};
+
 // CORS Middleware
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
 // Logging Middleware
 app.use(morgan('dev')); // Logging
@@ -47,7 +59,4 @@ app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
 
 // Server
-app.listen(
-  PORT,
-  console.log(`Server running on port ${PORT}`),
-);
+app.listen(PORT, console.log(`Server running on port ${PORT}`));
