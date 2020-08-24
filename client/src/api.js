@@ -12,7 +12,6 @@ const headers =
 
 // Set config defaults
 const instance = axios.create({
-  baseURL,
   timeout: 1000,
   headers: headers,
 });

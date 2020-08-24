@@ -26,14 +26,6 @@ const app = express();
 // Static File Declaration
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// Production Mode
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
-  app.get('*', (req, res) => {
-    res.sendfile(path.join((__dirname = 'client/build/index.html')));
-  });
-};
-
 // CORS Middleware
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
@@ -57,6 +49,14 @@ app.use(passport.session());
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
+
+// Production Mode
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get('*', (req, res) => {
+    res.sendfile(path.join((__dirname = 'client/build/index.html')));
+  });
+};
 
 // Server
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
