@@ -19,13 +19,13 @@
 ```bash
 git clone https://github.com/patrick-du/MERN-Boilerplate.git
 cd MERN-Boilerplate
-npm install
+yarn install
 
 cd client
-npm install
+yarn install
 
 cd ..
-npm start
+yarn dev
 ```
 
 Visit http://localhost:3000 in your browser to see the app running!
