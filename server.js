@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
 // Logging Middleware
-app.use(morgan('dev')); // Logging
+app.use(morgan('dev'));
 
 // Sessions Middleware
 app.use(
@@ -56,7 +56,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendfile(path.join((__dirname = 'client/build/index.html')));
   });
-};
+}
 
 // Server
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
